@@ -1,0 +1,20 @@
+#portfolio-item-modal-container {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#portfolio-item-modal {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 1px 1px 4px silver;
+  height: 90%;
+  width: 90%;
+  min-width: 320px;
+  max-width: 700px;
+}
