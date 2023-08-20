@@ -15,6 +15,8 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/portfolioItem.css" rel="stylesheet" />
+        <!-- Bootstrap icons -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
         <link href="css/styles.css" rel="stylesheet" />
     </head>
     <body id="page-top">
@@ -25,7 +27,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#about">A propos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">Mes services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Mes projets</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio">Mes travaux</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                     </ul>
@@ -55,54 +57,22 @@
                         <hr class="divider divider-light" />
                         <p class="text-white-75 mb-4">Après une formation de developpeur Web avec OpenClassroom, j'ai développé de nombreuses compétences dans le développement web.</p>
                         <p class="text-white-75 mb-4"> Autonome, empathique et curieuse je souhaite lancer mon activité en freelance afin de continuer à développer mes compétences tout en produisant des applications de qualité.</p>
-                        <a class="btn btn-light btn-xl" href="#services">Mes services</a>
+                        <a class="btn btn-light btn-xl" href="#services">Mes projets</a>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- Services-->
+        <!-- Projets-->
         <section class="page-section" id="services">
             <div class="container px-4 px-lg-5">
-                <h2 class="text-center mt-0">A votre service</h2>
+                <h2 class="text-center mt-0">Mes projets</h2>
                 <hr class="divider" />
                 <div class="row gx-4 gx-lg-5">
                 </div>
             </div>
         </section>
         <!-- Portfolio-->
-        <div id="portfolio">
-            <div class="container-fluid p-0">
-                <div class="row g-0">
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="portfolio-item" >
-                            <img class="img-fluid" src="assets\img\booki.png" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Projet</div>
-                                <div class="project-name">Bookie</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="portfolio-item" >
-                            <img class="img-fluid" src= "assets\img\Kasa_responsive.png" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Projet</div>
-                                <div class="project-name">Kasa </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-sm-6">
-                        <div class="portfolio-item" >
-                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="..." />
-                            <div class="portfolio-box-caption">
-                                <div class="project-category text-white-50">Projet</div>
-                                <div class="project-name">Mon vieux grimoire</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div id="portfolio"></div>
         <!-- Contact-->
         <section class="page-section" id="contact">
             <div class="container px-4 px-lg-5">
@@ -114,43 +84,41 @@
                 </div>
                 <div class="row gx-4 gx-lg-5 justify-content-center mb-5">
                     <div class="col-lg-6">
-                        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                        <form id="contactForm">
                             <!-- Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                <input class="form-control" id="name-form-input" type="text" placeholder="Saisissez votre nom..."/>
                                 <label for="name">Nom complet</label>
-                                <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                <div id="name-missing" class="invalid-feedback">Votre nom est requis</div>
+                                <div id="name-invalid" class="invalid-feedback">Votre nom est mal formaté</div>
                             </div>
                             <!-- Email address input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                <label for="email">Adresse Email</label>
-                                <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                <input class="form-control" id="email" type="email" placeholder="nom@example.com" />
+                                <label for="email">Adresse mail</label>
+                                <div id="email-missing" class="invalid-feedback">Votre adresse mail est requise</div>
+                                <div id="email-invalid" class="invalid-feedback">Votre adresse mail est mal formatée</div>
                             </div>
                             <!-- Phone number input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
+                                <input class="form-control" id="phone" type="tel" placeholder="0612345678"/>
                                 <label for="phone">Numéro de téléphone</label>
-                                <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                                <div id="phone-invalid" class="invalid-feedback">Votre téléphone est mal formaté</div>
                             </div>
                             <!-- Message input-->
                             <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                                <textarea class="form-control" id="message" type="text" placeholder="Saisissez votre message..." style="height: 10rem"></textarea>
                                 <label for="message">Message</label>
-                                <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                                <div id="message-missing" class="invalid-feedback"> Un message est requis.</div>
                             </div>
                             <div class="d-none" id="submitSuccessMessage">
                                 <div class="text-center mb-3">
-                                    <div class="fw-bolder">Form submission successful!</div>
-                                    To activate this form, sign up at
-                                    <br />
-                                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                    <div class="fw-bolder">Votre message et vos coordonnées ont bien été envoyés à Dalila !</div>
                                 </div>
                             </div>
-                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+                            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Erreur dans l'envoi du message</div></div>
                             <!-- Submit Button-->
-                            <div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Submit</button></div>
+                            <input class="btn btn-primary btn-xl" id="send-email-input" type="submit" value="Me contacter"/>
                         </form>
                     </div>
                 </div>
@@ -160,22 +128,12 @@
         <footer class="bg-light py-5">
             <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2023 - Dalila Younsi. Tous droits réservés</div></div>
         </footer>
-        <div id="portfolio-item-modal-container">
-            <div id="portfolio-item-modal">
-                <h2>Titre</h2>
-                <img src="" alt=""/>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, aliquam!</p>
-
-            </div>
-        </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- emailJs -->
+        <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script src="./js/portfolioItem.js"></script>
+        <script src="./js/scripts.js"></script>
     </body>
 </html>

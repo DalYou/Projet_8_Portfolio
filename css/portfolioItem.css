@@ -1,20 +1,50 @@
 #portfolio-item-modal-container {
   position: fixed;
-  z-index: 10;
+  z-index: 1001;
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 #portfolio-item-modal {
   background-color: white;
   border-radius: 15px;
   box-shadow: 1px 1px 4px silver;
-  height: 90%;
+  height: 80%;
   width: 90%;
   min-width: 320px;
   max-width: 700px;
+  position: relative;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.portfolio-item {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+#portfolio-item-modal__close-icon {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+#portfolio-item-modal img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+img.card-dalila-img-top {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
