@@ -37,7 +37,7 @@ function portfolioModal (selector, portfolioItems) {
                     <img src="${portfolioItem.img}" class="card-dalila-img-top" alt="...">
                     <div class="card-body">
                         <div class="project-category">${portfolioItem.category}</div>
-                        <a href="">${portfolioItem.link}</a>
+                        <a href="${portfolioItem.link}" target="_blank">Lien GitHub</a>
                         <h5 class="card-title">${portfolioItem.title}</h5>
                         <p class="card-text">${portfolioItem.desc}</p>
                         <button class="btn btn-primary">En savoir plus</button>

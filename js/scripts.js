@@ -56,7 +56,7 @@ window.addEventListener('DOMContentLoaded', event => {
         {
             title: "Bookie",
             desc: "Intégration d'une maquette de rendu professionnel en html/css",
-            img: "./assets/img/Booki.png",
+            img: "./assets/img/booki.png",
             category: "html/css",
             link: "https://github.com/DalYou/Booki",
             difficulties: [
