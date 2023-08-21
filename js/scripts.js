@@ -166,7 +166,10 @@ window.addEventListener('DOMContentLoaded', event => {
             emailjs.send('service_lbhd7f1', 'template_0g6gwyu', templateParams)
                 .then(function (response) {
                     console.log('SUCCESS!', response.status, response.text);
+                    document.querySelector("#submitSuccessMessage").className = "";
+                    document.querySelector("#send-email-input").style.display = "none";
                 }, function (error) {
+                    document.querySelector("#submitErrorMessage").className = "";
                     console.log('FAILED...', error);
                 });
         });
